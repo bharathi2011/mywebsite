@@ -1,4 +1,6 @@
 Mywebsite::Application.routes.draw do
+  resources :contacts
+
   resources :books
 
   resources :subjects
