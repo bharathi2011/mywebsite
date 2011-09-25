@@ -1,4 +1,8 @@
 Mywebsite::Application.routes.draw do
+  resources :books
+
+  resources :subjects
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

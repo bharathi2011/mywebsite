@@ -1,0 +1,38 @@
+<h1>Listing Books</h1>
+
+<%= form_tag books_path, :method => 'get', :id => "books_search" do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :title => nil %>
+  </p>
+
+<%= hidden_field_tag :direction, params[:direction] %>
+<%= hidden_field_tag :sort, params[:sort] %>
+
+<table class="pretty">
+  <tr>
+    <th><%= sortable "book_name" %></th>
+    <th><%= sortable "author" %></th>
+    <th><%= sortable "price" %></th>
+    <th><%= "Comments" %><th>
+  </tr>
+
+  <% for book in @books %>
+    <tr>
+      <td><%= book.book_name %></td>
+      <td><%= book.author %></td>
+      <td><%= book.price %></td>
+      <td><%=book.comments %></td>
+    </tr>
+  <% end %>
+
+</table>
+<%= will_paginate @books %>
+
+
+
+<% end %>
+<%= link_to 'Add a New Book to collections', new_book_path %>
+
+
+
