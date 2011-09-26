@@ -1,0 +1,18 @@
+
+<table class="pretty">
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Phone</th>
+  </tr>
+
+<% @contacts.each do |contact| %>
+  <tr>
+    <td><%= contact.name %></td>
+    <td><%= contact.address %></td>
+    <td><%= contact.phone %></td>
+    <td><%= link_to 'Show', contact %></td>
+    <td><%= link_to 'Destroy', contact, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>

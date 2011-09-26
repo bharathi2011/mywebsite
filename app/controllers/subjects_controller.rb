@@ -1,6 +1,5 @@
 class SubjectsController < ApplicationController
-  # GET /subjects
-  # GET /subjects.xml
+
   def index
     @subjects = Subject.all
 
@@ -10,8 +9,7 @@ class SubjectsController < ApplicationController
     end
   end
 
-  # GET /subjects/1
-  # GET /subjects/1.xml
+
   def show
     @subject = Subject.find(params[:id])
 
@@ -21,8 +19,7 @@ class SubjectsController < ApplicationController
     end
   end
 
-  # GET /subjects/new
-  # GET /subjects/new.xml
+
   def new
     @subject = Subject.new
 
@@ -32,13 +29,12 @@ class SubjectsController < ApplicationController
     end
   end
 
-  # GET /subjects/1/edit
+
   def edit
     @subject = Subject.find(params[:id])
   end
 
-  # POST /subjects
-  # POST /subjects.xml
+
   def create
     @subject = Subject.new(params[:subject])
 
@@ -53,8 +49,7 @@ class SubjectsController < ApplicationController
     end
   end
 
-  # PUT /subjects/1
-  # PUT /subjects/1.xml
+
   def update
     @subject = Subject.find(params[:id])
 
@@ -69,8 +64,7 @@ class SubjectsController < ApplicationController
     end
   end
 
-  # DELETE /subjects/1
-  # DELETE /subjects/1.xml
+
   def destroy
     @subject = Subject.find(params[:id])
     @subject.destroy

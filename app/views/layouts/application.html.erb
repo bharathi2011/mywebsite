@@ -1,7 +1,7 @@
 <!DOCTYPE html>
    <html>
      <head>
-       <title><%= yield(:book_name) || "Untitled" %></title>
+       <title><%= yield(:title) || "Untitled" %></title>
        <%= stylesheet_link_tag "application" %>
        <%= javascript_include_tag :defaults %>
        <%= csrf_meta_tag %>
@@ -9,11 +9,11 @@
      </head>
      <body>
         <div id="container">
-          <% flash.each do |subject_name, msg| %>
-          <%= content_tag :div, msg, :id => "flash_#{subject_name}" %>
+          <% flash.each do |name, msg| %>
+          <%= content_tag :div, msg, :id => "flash_#{name}" %>
           <% end %>
 
-          <%= content_tag :h1, yield(:book_name) %>
+          <%= content_tag :h1, yield(:title) if show_title? %>
           <%= yield %>
         </div>
      </body>
